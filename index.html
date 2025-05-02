@@ -19,9 +19,12 @@
     }
 
     p, a {
-      color: #d5ec06;
+      color: #f50e0e;
     }
-
+    p {
+  font-size: 20px; /* Mengubah ukuran font menjadi 20px */
+  font-weight: bold;
+}
     header {
       background: #0a0a23;
       color: white;
@@ -42,33 +45,10 @@
       font-size: 20px;
     }
 
-    .parallax-container {
-      position: relative;
-      overflow: hidden;
-      height: 100vh;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-    }
-
-    .parallax-background {
-      position: absolute;
-      top: 0;
-      left: 0;
-      height: 100%; 
-      width: 100%;
-      background-image: url(latarbelakang.jpg);
-      background-size: cover;
-      background-position: center;
-      transform: translateY(0);
-      z-index: -1;
-      transition: transform 0.1s ease-out;
-    }
-
+    /* Menghapus parallax CSS */
     .hero-content {
       text-align: center;
       color: white;
-      z-index: 1;
       padding: 20px;
       backdrop-filter: blur(3px);
     }
@@ -93,7 +73,7 @@
     }
 
     .album-buttons {
-      text-align: center;
+      text-align: flex;
       margin-bottom: 20px;
     }
 
@@ -113,14 +93,14 @@
 
     .gallery img {
       width: 100%;
-      border-radius: 10px;
+      border-radius: 20px;
     }
 
     .social-icons {
       display: flex;
-      justify-content: center;
+      justify-content: flex-start;
       gap: 30px;
-      font-size: 30px;
+      font-size: 50px;
       margin-top: 20px;
     }
 
@@ -140,6 +120,13 @@
       text-align: center;
       padding: 20px;
     }
+    body {
+      background-image: url(latarbelakang.jpg); 
+  background-size: cover; /* Membuat gambar menutupi seluruh latar belakang */
+  background-position: center; /* Memastikan gambar berada di tengah */
+  background-attachment: fixed; /* Menjaga gambar tetap di tempat saat scroll */
+  color: #ffffff; /* Warna teks putih agar kontras dengan latar belakang gambar */
+}
   </style>
 </head>
 <body>
@@ -153,9 +140,8 @@
   </nav>
 </header>
 
-<!-- Parallax Hero -->
-<section class="hero parallax-container">
-  <div class="parallax-background"></div>
+<!-- Tanpa Parallax -->
+<section class="hero">
   <div class="hero-content">
     <h1>Selamat Datang di Youth GBI TABGHA BINJAI</h1>
     <p>Komunitas Pemuda yang Memberkati Generasi</p>
@@ -180,19 +166,33 @@
     <img src="natal youth.jpg" alt="Album Natal Youth">
     <img src="natal youth1.jpg" alt="Album Natal Youth">
     <img src="natal youth2.jpg" alt="Album Natal Youth">
-    <!-- Tambahkan lainnya sesuai kebutuhan -->
+    <img src="natal youth3.jpg" alt="Album Natal Youth">
+    <img src="natal youth4.jpg" alt="Album Natal Youth">
+    <img src="natal youth5.jpg" alt="Album Natal Youth">
+    <img src="natal youth6.jpg" alt="Album Natal Youth">
+    <img src="natal youth7.jpg" alt="Album Natal Youth">
+    <img src="natal youth8.jpg" alt="Album Natal Youth">
+    <img src="natal youth9.jpg" alt="Album Natal Youth">
   </div>
 
   <div class="gallery" id="album2">
     <img src="retreat youth.jpg" alt="Album Retreat Youth">
     <img src="retreat youth1.jpg" alt="Album Retreat Youth">
     <img src="retreat youth2.jpg" alt="Album Retreat Youth">
+    <img src="retreat youth3.jpg" alt="Album Retreat Youth">
+    <img src="retreat youth4.jpg" alt="Album Retreat Youth">
+    <img src="retreat youth5.jpg" alt="Album Retreat Youth">
+    <img src="retreat youth6.jpg" alt="Album Retreat Youth">
+    <img src="retreat youth7.jpg" alt="Album Retreat Youth">
   </div>
 
   <div class="gallery" id="album3">
     <img src="natalyouth2023.jpg" alt="Album Natal Youth 2023">
     <img src="natalyouth20231.jpg" alt="Album Natal Youth 2023">
     <img src="natalyouth20232.jpg" alt="Album Natal Youth 2023">
+    <img src="natalyouth20233.jpg" alt="Album Natal Youth 2023">
+    <img src="natalyouth20234.jpg" alt="Album Natal Youth 2023">
+    <img src="natalyouth20235.jpg" alt="Album Natal Youth 2023">
   </div>
 </section>
 
@@ -232,12 +232,6 @@
       selected.scrollIntoView({ behavior: 'smooth' });
     }
   }
-
-  window.addEventListener('scroll', function () {
-    const scrolled = window.pageYOffset;
-    const background = document.querySelector('.parallax-background');
-    background.style.transform = 'translateY(' + (scrolled * 0.4) + 'px)';
-  });
 </script>
 
 </body>
